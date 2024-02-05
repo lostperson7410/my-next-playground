@@ -11,18 +11,18 @@ export default function ProductById(props: any): any {
 
   const getProductById = async (id: any) => {
     const res: any = await axios.get(`https://fakestoreapi.com/products/${id}`);
-    console.log('this is res product by is: ',res);
-    
+    console.log("this is res product by is: ", res);
   };
   useEffect(() => {
     getProductById(id);
   }, [id]);
+
   return (
     <div className="w-full border-y-amber-300">
-      <div>
-        <div>{id}</div>
-        <div>{id}</div>
-        <div>{id}</div>
+      <div className="flex flex-row">
+        <div className="basis-1/4">01</div>
+        <div className="basis-1/4">02</div>
+        <div className="basis-1/2">03</div>
       </div>
     </div>
   );
