@@ -9,7 +9,7 @@ export default function ProductById(props: any): any {
   const { id, ...param } = useParams();
   console.log("this is parman:", param);
 
-  const getProductById = async (id: number) => {
+  const getProductById = async (id: any) => {
     const res: any = await axios.get(`https://fakestoreapi.com/products/${id}`);
   };
   useEffect(() => {
