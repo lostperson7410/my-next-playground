@@ -11,6 +11,8 @@ export default function ProductById(props: any): any {
 
   const getProductById = async (id: any) => {
     const res: any = await axios.get(`https://fakestoreapi.com/products/${id}`);
+    console.log('this is res product by is: ',res);
+    
   };
   useEffect(() => {
     getProductById(id);
