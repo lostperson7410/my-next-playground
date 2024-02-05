@@ -18,25 +18,24 @@ export default async function Page() {
 
   let productDetail: any = [];
 
-
-  const handleClick = () =>{
-    console.log('this is click');
-    
-  }
+  const handleClick = () => {
+    console.log("this is click");
+  };
   return (
     <div className=" w-full flex flex-row flex-wrap gap-10 mg-16">
-      {products?.map((item: any,index:number) => (
+      {products?.map((item: any, index: number) => (
         <div
-        key={index}
-        className=" h-auto  rounded shadow-md flex flex-col bg-white text-black justify-center items-center">
+          key={index}
+          className=" h-auto  rounded shadow-md flex flex-col bg-white text-black justify-center items-center"
+        >
           <img width={50} height={50} alt={item.title} src={item.image} />
           {item.title}
 
-          <button className="w-full rounded px-16 bg-blue-200 hover:bg-blue-500 text-gray-50">
-            <Link href={`products/${item.id}`}>
+          <Link href={`products/${item.id}`}>
+            <button className="w-full rounded px-16 bg-blue-200 hover:bg-blue-500 text-gray-50">
               <p>go to Product Detail</p>
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
       ))}
     </div>
