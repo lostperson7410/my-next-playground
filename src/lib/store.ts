@@ -1,13 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counterSlice from './features/counter/counterSlice'
 
-export const makeStore = () => {
-  return configureStore({
-    reducer: {
-        counter: counterSlice
-    }
-  })
-}
+export const makeStore:any = configureStore({
+  reducer: {
+      counter: counterSlice
+  }
+})
+
+// export const makeStore = () => {
+//   return configureStore({
+//     reducer: {}
+//   })
+// }
 
 // Infer the type of makeStore
 export type AppStore = ReturnType<typeof makeStore>
