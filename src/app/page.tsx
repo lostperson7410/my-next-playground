@@ -1,6 +1,6 @@
 'use client'
 
-import { currentCounterValue, decremented, incremented } from "@/lib/features/counter/counterSlice";
+import { currentCounterValue, decremented, incremented, testThunk } from "@/lib/features/counter/counterSlice";
 import Image from "next/image";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,7 +17,9 @@ export default function Home() {
       <div>
         {counterRedux}
         <div className=" flex flex-row gap-3">
-          <button className=" bg-blue-400 w-full" onClick={()=>dispatch(incremented())
+          <button className=" bg-blue-400 w-full" onClick={()=>{
+            dispatch(testThunk())
+            dispatch(incremented())}
           }>+</button>
           <button className=" bg-red-600 w-full" onClick={()=>dispatch(decremented())
           }>-</button>
